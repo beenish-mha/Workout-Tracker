@@ -12,9 +12,12 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/workout", {
-  useNewUrlParser: true,
-});
+mongoose.connect(
+  "mongodb+srv://beenish:beenish@cluster0-godqf.mongodb.net/test?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+  }
+);
 
 mongoose.connection
   .once("open", () => {
