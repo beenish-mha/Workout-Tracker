@@ -13,14 +13,14 @@ app.use(express.json());
 app.use(express.static("public"));
 
 mongoose.connect("mongodb://localhost/workout", {
-  useNewUrlParser: true
+  useNewUrlParser: true,
 });
 
 mongoose.connection
   .once("open", () => {
-    console.log("connected");
+    console.log("connected to MongoDB");
   })
-  .on("error", error => {
+  .on("error", (error) => {
     console.log("not connected" + error);
   });
 
